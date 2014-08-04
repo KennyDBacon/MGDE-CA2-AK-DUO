@@ -20,12 +20,13 @@ namespace GameStateManagementSample
     class PhoneMainMenuScreen : PhoneMenuScreen
     {
         public PhoneMainMenuScreen()
-            : base("Main Menu")
+            : base("Racing Rage")
         {
             // Create a button to start the game
             Button playButton = new Button("Play");
             playButton.Tapped += playButton_Tapped;
             MenuButtons.Add(playButton);
+            playButton.Size = new Vector2(300, 100);
 
             BooleanButton musicButton = new BooleanButton("Music", true);
             musicButton.Tapped += musicButton_Tapped;

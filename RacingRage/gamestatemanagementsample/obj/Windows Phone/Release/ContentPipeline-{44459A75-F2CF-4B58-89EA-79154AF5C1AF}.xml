@@ -161,6 +161,15 @@
       <Time>2014-07-13T22:13:15+08:00</Time>
     </Item>
     <Item>
+      <Source>Pickup-Sound.wav</Source>
+      <Name>Pickup-Sound</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\Pickup-Sound.xnb</Output>
+      <Time>2014-08-04T12:47:31.8253953+08:00</Time>
+    </Item>
+    <Item>
       <Source>Cheesy Track.mp3</Source>
       <Name>Cheesy Track</Name>
       <Importer>Mp3Importer</Importer>
@@ -169,15 +178,6 @@
       <Output>D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\Cheesy Track.xnb</Output>
       <Extra>D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\Cheesy Track.wma</Extra>
       <Time>2014-07-13T22:14:53+08:00</Time>
-    </Item>
-    <Item>
-      <Source>Pickup-Sound.wav</Source>
-      <Name>Pickup-Sound</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\Pickup-Sound.xnb</Output>
-      <Time>2014-08-04T12:47:31.8253953+08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -237,6 +237,7 @@ namespace GameStateManagementSample
 
                     ScreenManager.AddScreen(new ReadyScreen(readyCrashText), PlayerIndex.One);
                     readyCrashText = "Ready?";
+                    resetGame();
                 }
 
                 // Reset game every new game
@@ -753,7 +754,7 @@ namespace GameStateManagementSample
             }
 
             spriteBatch.Draw(sideUI, new Vector2(390, 0), Color.White);
-            spriteBatch.DrawString(smallerGameFont, fuel, new Vector2(475 - smallerGameFont.MeasureString(fuel).X, 700), Color.Black);
+            spriteBatch.DrawString(smallerGameFont, fuel, new Vector2(475 - smallerGameFont.MeasureString(fuel).X, 680), Color.Black);
 
             spriteBatch.Draw(playerCar, playerPosition, Color.White);
             spriteBatch.Draw(playerCar, UICarVect, Color.White);
@@ -770,7 +771,7 @@ namespace GameStateManagementSample
 
             if (ScreenManager.enableAd == true)
             {
-                ScreenManager.getAd.Draw(spriteBatch, new Vector2(0, viewport.Height - 128));
+                ScreenManager.getAd.Draw(spriteBatch, new Vector2(0, viewport.Height - 75));
             }
         }
 

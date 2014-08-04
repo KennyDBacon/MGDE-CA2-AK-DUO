@@ -16,14 +16,22 @@ namespace GameStateManagementSample
     /// </summary>
     class ReadyScreen : PhoneMenuScreen
     {
-        public ReadyScreen()
-            : base("Ready?")
+        public ReadyScreen(string readyCrashText)
+            : base(readyCrashText)
         {
             // Create the "Resume" and "Exit" buttons for the screen
-
-            Button startButton = new Button("Start!");
-            startButton.Tapped += startButton_Tapped;
-            MenuButtons.Add(startButton);
+            if(readyCrashText.Equals("Crash!"))
+            {
+                Button startButton = new Button("Continue?");
+                startButton.Tapped += startButton_Tapped;
+                MenuButtons.Add(startButton);
+            }
+            else
+            {
+                Button startButton = new Button("Start!");
+                startButton.Tapped += startButton_Tapped;
+                MenuButtons.Add(startButton);
+            }
 
             Button exitButton = new Button("Exit");
             exitButton.Tapped += exitButton_Tapped;

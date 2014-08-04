@@ -65,7 +65,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Users\user\Dropbox\AK Duo\Adam's Copy\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\playerCar.xnb</Output>
-      <Time>2014-07-13T22:13:41+08:00</Time>
+      <Time>2014-07-31T21:13:08.0273069+08:00</Time>
     </Item>
     <Item>
       <Source>enemyCar.png</Source>
@@ -77,7 +77,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Users\user\Dropbox\AK Duo\Adam's Copy\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\enemyCar.xnb</Output>
-      <Time>2014-07-13T22:13:58+08:00</Time>
+      <Time>2014-07-31T21:00:27.7038189+08:00</Time>
     </Item>
     <Item>
       <Source>fuelCan.png</Source>

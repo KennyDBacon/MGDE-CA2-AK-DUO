@@ -11,6 +11,9 @@ using System;
 using GameStateManagement;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Media;
+using System.IO;
+using System.IO.IsolatedStorage;
+using AdDuplex.Xna;
 
 namespace GameStateManagementSample
 {
@@ -43,11 +46,26 @@ namespace GameStateManagementSample
 
         public override void Activate(bool instancePreserved)
         {
+            //IsolatedStorageFile local = IsolatedStorageFile.GetUserStoreForApplication();
+
+            //if (!local.DirectoryExists("DataFolder"))
+            //    local.CreateDirectory("DataFolder");
+
+            //using (var isoFileStream =
+            //new System.IO.IsolatedStorage.IsolatedStorageFileStream("DataFolder\\DataFile.txt",System.IO.FileMode.OpenOrCreate, local))
+            //{
+            //    using (var isoFileWriter = new System.IO.StreamWriter(isoFileStream))
+            //    {
+                    
+            //    }
+            //}
+
             checkButton();
             if (ScreenManager.enableMusic == true)
             {
                 MediaPlayer.Play(ScreenManager.cheesymusic);
             }
+
             base.Activate(instancePreserved);
         }
 

@@ -17,6 +17,8 @@ using Microsoft.Xna.Framework.Input;
 using GameStateManagement;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Devices;
+using Microsoft.Xna.Framework.Media;
+using AdDuplex.Xna;
 #endregion
 
 namespace GameStateManagementSample
@@ -61,9 +63,9 @@ namespace GameStateManagementSample
         Vector2 fuelVect = new Vector2(0, 0);
 
         Vector2[] enemyCarsVect = new Vector2[]{new Vector2(80,0),
-                                                                           new Vector2(138,0),
-                                                                           new Vector2(198,0),
-                                                                           new Vector2(254,0)} ;
+                                                new Vector2(138,0),
+                                                new Vector2(198,0),
+                                                new Vector2(254,0)} ;
 
         SoundEffect engineLoop;
         SoundEffectInstance EngineInstance;
@@ -91,6 +93,8 @@ namespace GameStateManagementSample
         int fuelCounter = 100;
         int gearNumEngine = 1;
         string fuel;
+
+        string readyCrashText = "Ready?";
         #endregion
 
         #region Initialization
@@ -114,12 +118,16 @@ namespace GameStateManagementSample
                 true);
         }
 
-
         /// <summary>
         /// Load graphics content for the game.
         /// </summary>
         public override void Activate(bool instancePreserved)
         {
+            if (ScreenManager.enableMusic == true)
+            {
+                MediaPlayer.Stop();
+            }
+
             if (!instancePreserved)
             {
                 if (content == null)
@@ -219,7 +227,8 @@ namespace GameStateManagementSample
                 // Prompt player to start
                 if (ScreenManager.playerReady == false)
                 {
-                    ScreenManager.AddScreen(new ReadyScreen(), PlayerIndex.One);
+                    ScreenManager.AddScreen(new ReadyScreen(readyCrashText), PlayerIndex.One);
+                    readyCrashText = "Ready?";
                 }
 
                 // Reset game every new game
@@ -239,7 +248,7 @@ namespace GameStateManagementSample
 
                     if (playerPosition.X >= 72 && playerPosition.X <= 300)
                     {
-                        distance.X += acceleration.X;
+                        distance.X += acceleration.X * 1.6f;
                         distance.Y -= 0;
 
                         playerPosition += distance;
@@ -379,11 +388,15 @@ namespace GameStateManagementSample
                 //
                 //
 
+                // Fuel movement
+                fuelVect.Y += 20;
+
                 // Car movement
                 // Car collision detection
                 for (int i = 0; i < enemyCarNum; i++)
                 {
                     enemyCarsVect[i].Y += 20;
+
                     hitTest( i );
 
                     if (fuelExist == true)
@@ -391,9 +404,6 @@ namespace GameStateManagementSample
                         fuelPickUp();
                     }
                 }
-
-                // Fuel movement
-                fuelVect.Y += 20;
 
                 // Respawn car when they leave bottom of the screen
                 enemyPositionCounter += 20;
@@ -567,6 +577,8 @@ namespace GameStateManagementSample
             roadTwoVect.Y = -800;
             roadEndVect.Y = -80000;
 
+            readyCrashText = "Ready?";
+
             carSpawner();
             enemyPositionCounter = -800;
         }
@@ -586,6 +598,8 @@ namespace GameStateManagementSample
 
             carSpawner();
             enemyPositionCounter = -800;
+
+            readyCrashText = "Crash!";
 
             if (ScreenManager.enableSoundEffect)
             {
@@ -695,7 +709,8 @@ namespace GameStateManagementSample
             // Our player and enemy are both actually just text strings.
             SpriteBatch spriteBatch = ScreenManager.SpriteBatch;
 
-           
+            Viewport viewport = ScreenManager.GraphicsDevice.Viewport;
+
             // Get width and height of car
             carWidth = playerCar.Width;
             carHeight = playerCar.Height;

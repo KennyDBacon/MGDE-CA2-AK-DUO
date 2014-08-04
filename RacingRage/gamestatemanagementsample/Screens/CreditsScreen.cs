@@ -40,7 +40,7 @@ namespace GameStateManagementSample
 
         public CreditsScreen()
         {
-            EnabledGestures = GestureType.Tap | GestureType.DoubleTap;
+            EnabledGestures = GestureType.Tap;
         }
 
 
@@ -62,8 +62,7 @@ namespace GameStateManagementSample
 
                 creditpos = ScreenDimensions.Y / 2 - gameFont.MeasureString(creditsTitle).X / 2;
                 TouchPanel.EnabledGestures =
-                GestureType.Tap |
-                GestureType.DoubleTap;
+                GestureType.Tap;
 
 
                 // once the load has finished, we use ResetElapsedTime to tell the game's
@@ -87,8 +86,7 @@ namespace GameStateManagementSample
 
             if (creditpos <= -100)
             {
-                LoadingScreen.Load(ScreenManager, false, null, new BackgroundScreen(),
-                                                        new PhoneMainMenuScreen());
+                
             }
 
 
@@ -106,10 +104,6 @@ namespace GameStateManagementSample
             {
                 // If we have a tap
                 if (gesture.GestureType == GestureType.Tap)
-                {
-
-                }
-                else if (gesture.GestureType == GestureType.DoubleTap)
                 {
                     LoadingScreen.Load(ScreenManager, false, null, new BackgroundScreen(),
                                                         new PhoneMainMenuScreen());

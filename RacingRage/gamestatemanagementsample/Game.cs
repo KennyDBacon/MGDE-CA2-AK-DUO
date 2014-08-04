@@ -10,6 +10,8 @@
 using System;
 using GameStateManagement;
 using Microsoft.Xna.Framework;
+using AdDuplex.Xna;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace GameStateManagementSample
 {
@@ -24,6 +26,10 @@ namespace GameStateManagementSample
         GraphicsDeviceManager graphics;
         ScreenManager screenManager;
         ScreenFactory screenFactory;
+
+        SpriteBatch spriteBatch;
+        AdManager adDuplex;
+        Vector2 adPosition = new Vector2(0, 100);
 
         /// <summary>
         /// The main game constructor.
@@ -79,12 +85,31 @@ namespace GameStateManagementSample
 #endif
         }
 
+        protected override void LoadContent()
+        {
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            adDuplex = new AdManager(this, "0");
+            adDuplex.LoadContent();
+
+            base.LoadContent();
+        }
+
+        protected override void Update(GameTime gameTime)
+        {
+            adDuplex.Update(gameTime);
+
+            base.Update(gameTime);
+        }
+
         /// <summary>
         /// This is called when the game should draw itself.
         /// </summary>
         protected override void Draw(GameTime gameTime)
         {
             graphics.GraphicsDevice.Clear(Color.Black);
+
+            adDuplex.Draw(spriteBatch, adPosition);
 
             // The real drawing happens inside the screen manager component.
             base.Draw(gameTime);

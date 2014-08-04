@@ -18,3 +18,4 @@ Content\WinMusic.xnb
 Content\Pickup-Sound.xnb
 Content\Cheesy Track.xnb
 Content\Cheesy Track.wma
+Content\transparent.xnb

@@ -179,6 +179,15 @@
       <Extra>D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\Cheesy Track.wma</Extra>
       <Time>2014-07-13T22:14:53+08:00</Time>
     </Item>
+    <Item>
+      <Source>transparent.png</Source>
+      <Name>transparent</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\transparent.xnb</Output>
+      <Time>2014-08-03T21:37:35+08:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{44459A75-F2CF-4B58-89EA-79154AF5C1AF}</ContentProjectGUID>

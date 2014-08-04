@@ -65,3 +65,10 @@ D:\DIT-GitHub\RacingRage\GameStateManagementSample\obj\Windows Phone\Release\WMA
 bin\Windows Phone\Release\
 D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Racing Rage.xap
 D:\DIT-GitHub\RacingRage\GameStateManagementSample\obj\Windows Phone\Release\XapCacheFile.xml
+D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\transparent.xnb
+D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Racing Rage.xap
+D:\DIT-GitHub\RacingRage\GameStateManagementSample\obj\Windows Phone\Release\XapCacheFile.xml
+D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\AppManifest.xaml
+D:\DIT-GitHub\RacingRage\GameStateManagementSample\obj\Windows Phone\Release\WMAppManifest.xml.g
+D:\DIT-GitHub\RacingRage\GameStateManagementSample\obj\Windows Phone\Release\WMAppManifest.xml
+bin\Windows Phone\Release\

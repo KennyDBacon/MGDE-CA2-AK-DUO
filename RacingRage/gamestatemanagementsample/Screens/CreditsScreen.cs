@@ -28,6 +28,7 @@ namespace GameStateManagementSample
 
         Texture2D splogo;
         Texture2D background_pattern;
+        Texture2D transBack;
 
         InputAction backToMenu;
 
@@ -35,6 +36,8 @@ namespace GameStateManagementSample
         Vector2 ScreenDimensions = new Vector2(
             GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height,
             GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width);
+
+        Rectangle backRect = new Rectangle(0, 0, 0, 0);
 
         //Vector2 creditsPosition = new Vector2()
 
@@ -58,8 +61,8 @@ namespace GameStateManagementSample
                 gameFont = content.Load<SpriteFont>("gamefont");
                 background_pattern = content.Load<Texture2D>("background");
                 splogo = content.Load<Texture2D>("SPLOGO");
+                transBack = content.Load<Texture2D>("transparent");
                 
-
                 creditpos = ScreenDimensions.Y / 2 - gameFont.MeasureString(creditsTitle).X / 2;
                 TouchPanel.EnabledGestures =
                 GestureType.Tap;
@@ -82,11 +85,10 @@ namespace GameStateManagementSample
                                                        bool coveredByOtherScreen)
         {
             base.Update(gameTime, otherScreenHasFocus, false);
-            creditpos--;
 
-            if (creditpos <= -100)
+            if (creditpos >= 0)
             {
-                
+                creditpos--;
             }
 
 
@@ -125,6 +127,7 @@ namespace GameStateManagementSample
         /// </summary>
         public override void Draw(GameTime gameTime)
         {
+            Viewport viewport = new Viewport();
 
             ScreenManager.SpriteBatch.Begin();
             string credits = "AK-DUO Studios\n\nProgrammed By \nKenny (Head)\nAdam\n\nArt by\nAdam(Head)\n\nSchool of"+
@@ -133,9 +136,10 @@ namespace GameStateManagementSample
             ScreenManager.SpriteBatch.Draw(background_pattern,
                 new Vector2(0, 0),
                 Color.White);
-            
-            ScreenManager.SpriteBatch.DrawString(ScreenManager.Font, credits, new Vector2(50, creditpos), Color.White);
-            ScreenManager.SpriteBatch.Draw(splogo, new Vector2(50, (ScreenDimensions.Y / 2 + gameFont.MeasureString(credits).X)), Color.White);
+
+            ScreenManager.SpriteBatch.Draw(transBack, new Rectangle(50, Convert.ToInt32(creditpos), splogo.Width, 800), Color.White);
+            ScreenManager.SpriteBatch.DrawString(ScreenManager.Font, credits, new Vector2(70, creditpos), Color.White);
+            ScreenManager.SpriteBatch.Draw(splogo, new Vector2(50, ScreenDimensions.X - 100), Color.White);
 
             ScreenManager.SpriteBatch.End();
 

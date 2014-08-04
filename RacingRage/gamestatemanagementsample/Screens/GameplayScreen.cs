@@ -73,6 +73,8 @@ namespace GameStateManagementSample
         SoundEffectInstance carCrashInstance;
         SoundEffect WinMusic;
         SoundEffectInstance WinMusicInstance;
+        SoundEffect PickupSound;
+        SoundEffectInstance PickupInstance;
 
         VibrateController vibration = VibrateController.Default;
 
@@ -160,7 +162,9 @@ namespace GameStateManagementSample
 
                 WinMusic = content.Load<SoundEffect>("WinMusic");
                 WinMusicInstance = WinMusic.CreateInstance();
-                //
+
+                PickupSound = content.Load<SoundEffect>("Pickup-Sound");
+                PickupInstance = PickupSound.CreateInstance();
 
                 // Reset the elapsed time when this screen is activated
                 ScreenManager.Game.ResetElapsedTime();
@@ -542,6 +546,7 @@ namespace GameStateManagementSample
                     if (fuelVect.Y <= (playerPosition.Y + carHeight))
                         if ((fuelVect.Y + carHeight) >= playerPosition.Y)
                         {
+                            PickupInstance.Play();
                             if (fuelCounter + 30 < 100)
                             {
                                 fuelCounter += 30;

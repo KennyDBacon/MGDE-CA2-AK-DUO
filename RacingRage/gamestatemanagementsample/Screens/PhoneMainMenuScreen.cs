@@ -35,9 +35,9 @@ namespace GameStateManagementSample
             sfxButton.Tapped += sfxButton_Tapped;
             MenuButtons.Add(sfxButton);
 
-            BooleanButton accelerometerButton = new BooleanButton("Accelerometer", true);
-            accelerometerButton.Tapped += accelerometerButton_Tapped;
-            MenuButtons.Add(accelerometerButton);
+            Button controlButton = new Button("Control: Gyro");
+            controlButton.Tapped += controlButton_Tapped;
+            MenuButtons.Add(controlButton);
 
             Button creditsButton = new Button("Credits");
             creditsButton.Tapped += creditsButton_Tapped;
@@ -93,13 +93,6 @@ namespace GameStateManagementSample
                     else
                         b.Text = "Sound: Off";
                 }
-                else if (b.Text.Contains("Accelerometer"))
-                {
-                    if (ScreenManager.enableAccelerometer == true)
-                        b.Text = "Accelerometer: On";
-                    else
-                        b.Text = "Accelerometer: Off";
-                }
             }
         }
 
@@ -136,11 +129,20 @@ namespace GameStateManagementSample
             checkButton();
         }
 
-        void accelerometerButton_Tapped(object sender, EventArgs e)
+        void controlButton_Tapped(object sender, EventArgs e)
         {
-            BooleanButton button = sender as BooleanButton;
-            ScreenManager.enableAccelerometer = !ScreenManager.enableAccelerometer;
-            checkButton();
+            Button button = sender as Button;
+
+            if (ScreenManager.enableAccelerometer == false)
+            {
+                ScreenManager.enableAccelerometer = !ScreenManager.enableAccelerometer;
+                button.Text = "Control: Gyro";
+            }
+            else
+            {
+                ScreenManager.enableAccelerometer = !ScreenManager.enableAccelerometer;
+                button.Text = "Control: Touch";
+            }
         }
 
         protected override void OnCancel()

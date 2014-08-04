@@ -266,7 +266,7 @@ namespace GameStateManagementSample
                             distance.X = 0;
                         }
 
-                        distance.X = acceleration.X * 20.0f;
+                        distance.X = acceleration.X * 25.0f;
                         distance.Y = 0;
 
                         playerPosition += distance;
@@ -464,7 +464,7 @@ namespace GameStateManagementSample
                     for (int i = 0; i < 3; i++)
                     {
                         enemyCarsVect[i].Y = 0;
-                        enemyCarsVect[i].Y = -300 * ( i + 1 );
+                        enemyCarsVect[i].Y = -350 * ( i + 1 );
                     }
                     enemyCarsVect[3].Y = randomY;
 
@@ -479,7 +479,7 @@ namespace GameStateManagementSample
                     for (int i = 1; i < 4; i++)
                     {
                         enemyCarsVect[i].Y = 0;
-                        enemyCarsVect[i].Y = -300 * i;
+                        enemyCarsVect[i].Y = -350 * i;
                     }
 
                     fuelInLane = 1;
@@ -489,8 +489,8 @@ namespace GameStateManagementSample
                     // Middle 2 cars spawn in preset position
                 case 2:
                     enemyCarsVect[0].Y = randomY;
-                    enemyCarsVect[1].Y = -600;
-                    enemyCarsVect[2].Y = -200;
+                    enemyCarsVect[1].Y = -1000;
+                    enemyCarsVect[2].Y = -400;
                     enemyCarsVect[3].Y = randomY;
 
                     fuelInLane = 3;
@@ -501,8 +501,8 @@ namespace GameStateManagementSample
                 case 3:
                     enemyCarsVect[0].Y = randomY;
                     enemyCarsVect[1].Y = randomY;
-                    enemyCarsVect[2].Y = -250;
-                    enemyCarsVect[3].Y = -550;
+                    enemyCarsVect[2].Y = -450;
+                    enemyCarsVect[3].Y = -850;
 
                     fuelInLane = 1;
                     setFuelVector(fuelInLane);
@@ -510,8 +510,8 @@ namespace GameStateManagementSample
                     // First 2 cars spawn in preset position
                     // Last 2 cars spawn in same random position
                 case 4:
-                    enemyCarsVect[0].Y = -550;
-                    enemyCarsVect[1].Y = -250;
+                    enemyCarsVect[0].Y = -850;
+                    enemyCarsVect[1].Y = -450;
                     enemyCarsVect[2].Y = randomY;
                     enemyCarsVect[3].Y = randomY;
 
@@ -520,9 +520,9 @@ namespace GameStateManagementSample
                     break;
                 default:
                     enemyCarsVect[0].Y = -2000;
-                    enemyCarsVect[1].Y = -200;
-                    enemyCarsVect[2].Y = -250;
-                    enemyCarsVect[3].Y = -150;
+                    enemyCarsVect[1].Y = -450;
+                    enemyCarsVect[2].Y = -380;
+                    enemyCarsVect[3].Y = -400;
 
                     fuelInLane = 2;
                     setFuelVector(fuelInLane);

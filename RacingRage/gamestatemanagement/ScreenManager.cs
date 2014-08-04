@@ -111,7 +111,7 @@ namespace GameStateManagement
             set { isAccelerometer = value; }
         }
 
-        bool isAccelerometer = false;
+        bool isAccelerometer = true;
 
         public bool engineSoundBool
         {
@@ -222,7 +222,7 @@ namespace GameStateManagement
                 screen.Activate(false);
             }
 
-            adDuplex = new AdManager(Game, "112099" /* your AppId here */);
+            adDuplex = new AdManager(Game, "112307");
             adDuplex.LoadContent();
         }
 

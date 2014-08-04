@@ -266,7 +266,7 @@ namespace GameStateManagementSample
                             distance.X = 0;
                         }
 
-                        distance.X = acceleration.X * 12.0f;
+                        distance.X = acceleration.X * 20.0f;
                         distance.Y = 0;
 
                         playerPosition += distance;
@@ -770,7 +770,7 @@ namespace GameStateManagementSample
 
             if (ScreenManager.enableAd == true)
             {
-                ScreenManager.getAd.Draw(spriteBatch, new Vector2(0, viewport.Height / 2 + 40));
+                ScreenManager.getAd.Draw(spriteBatch, new Vector2(0, viewport.Height - 128));
             }
         }
 

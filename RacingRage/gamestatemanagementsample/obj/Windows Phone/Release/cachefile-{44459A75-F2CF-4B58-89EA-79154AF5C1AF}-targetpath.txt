@@ -17,3 +17,4 @@ Content\Car Crash.xnb
 Content\WinMusic.xnb
 Content\Cheesy Track.xnb
 Content\Cheesy Track.wma
+Content\Pickup-Sound.xnb

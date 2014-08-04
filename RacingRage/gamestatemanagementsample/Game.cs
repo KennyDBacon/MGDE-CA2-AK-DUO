@@ -28,8 +28,6 @@ namespace GameStateManagementSample
         ScreenFactory screenFactory;
 
         SpriteBatch spriteBatch;
-        AdManager adDuplex;
-        Vector2 adPosition = new Vector2(0, 100);
 
         /// <summary>
         /// The main game constructor.
@@ -89,16 +87,11 @@ namespace GameStateManagementSample
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            adDuplex = new AdManager(this, "0");
-            adDuplex.LoadContent();
-
             base.LoadContent();
         }
 
         protected override void Update(GameTime gameTime)
         {
-            adDuplex.Update(gameTime);
-
             base.Update(gameTime);
         }
 
@@ -108,8 +101,6 @@ namespace GameStateManagementSample
         protected override void Draw(GameTime gameTime)
         {
             graphics.GraphicsDevice.Clear(Color.Black);
-
-            adDuplex.Draw(spriteBatch, adPosition);
 
             // The real drawing happens inside the screen manager component.
             base.Draw(gameTime);

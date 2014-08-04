@@ -36,7 +36,7 @@ namespace GameStateManagementSample
         SpriteFont gameFont;
         SpriteFont smallerGameFont;
 
-        Vector2 playerPosition = new Vector2(200, 700);
+        Vector2 playerPosition = new Vector2(200, 400);
         Vector2 enemyPosition = new Vector2(100, 100);
 
         float pauseAlpha;
@@ -216,6 +216,8 @@ namespace GameStateManagementSample
         {
             base.Update(gameTime, otherScreenHasFocus, false);
 
+            ScreenManager.getAd.Update(gameTime);
+
             // Gradually fade in or out depending on whether we are covered by the pause screen.
             if (coveredByOtherScreen)
                 pauseAlpha = Math.Min(pauseAlpha + 1f / 32, 1);
@@ -227,6 +229,8 @@ namespace GameStateManagementSample
                 // Prompt player to start
                 if (ScreenManager.playerReady == false)
                 {
+                    ScreenManager.enableAd = true;
+
                     ScreenManager.AddScreen(new ReadyScreen(readyCrashText), PlayerIndex.One);
                     readyCrashText = "Ready?";
                 }
@@ -248,8 +252,18 @@ namespace GameStateManagementSample
 
                     if (playerPosition.X >= 72 && playerPosition.X <= 300)
                     {
-                        distance.X += acceleration.X * 1.6f;
-                        distance.Y -= 0;
+                        // Sudden change of direction
+                        if (distance.X < 0 && acceleration.X > 0)
+                        {
+                            distance.X = 0;
+                        }
+                        else if (distance.X > 0 && acceleration.X < 0)
+                        {
+                            distance.X = 0;
+                        }
+
+                        distance.X = acceleration.X * 12.0f;
+                        distance.Y = 0;
 
                         playerPosition += distance;
 
@@ -747,6 +761,11 @@ namespace GameStateManagementSample
                 float alpha = MathHelper.Lerp(1f - TransitionAlpha, 1f, pauseAlpha / 2);
 
                 ScreenManager.FadeBackBufferToBlack(alpha);
+            }
+
+            if (ScreenManager.enableAd == true)
+            {
+                ScreenManager.getAd.Draw(spriteBatch, new Vector2(0, viewport.Height / 2 + 40));
             }
         }
 

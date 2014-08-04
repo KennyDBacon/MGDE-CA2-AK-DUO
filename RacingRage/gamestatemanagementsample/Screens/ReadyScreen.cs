@@ -40,6 +40,8 @@ namespace GameStateManagementSample
 
         void startButton_Tapped(object sender, EventArgs e)
         {
+            ScreenManager.enableAd = false;
+
             ScreenManager.playerReady = true;
             ScreenManager.engineSoundBool = true;
             ExitScreen();

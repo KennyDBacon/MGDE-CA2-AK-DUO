@@ -5,3 +5,9 @@ C:\Users\user\Dropbox\AK Duo\Adam's Copy\RacingRage\GameStateManagement\obj\Wind
 C:\Users\user\Dropbox\AK Duo\Adam's Copy\RacingRage\GameStateManagement\obj\Windows Phone\Release\GameStateManagement.pdb
 C:\Users\user\Dropbox\AK Duo\Adam's Copy\RacingRage\GameStateManagement\bin\Windows Phone\Release\AdDuplex.Xna.dll
 C:\Users\user\Dropbox\AK Duo\Adam's Copy\RacingRage\GameStateManagement\obj\Windows Phone\Release\GameStateManagement (Windows Phone).csprojResolveAssemblyReference.cache
+D:\DIT-GitHub\RacingRage\GameStateManagement\bin\Windows Phone\Release\GameStateManagement.dll
+D:\DIT-GitHub\RacingRage\GameStateManagement\bin\Windows Phone\Release\GameStateManagement.pdb
+D:\DIT-GitHub\RacingRage\GameStateManagement\obj\Windows Phone\Release\GameStateManagement (Windows Phone).csprojResolveAssemblyReference.cache
+D:\DIT-GitHub\RacingRage\GameStateManagement\obj\Windows Phone\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\DIT-GitHub\RacingRage\GameStateManagement\obj\Windows Phone\Release\GameStateManagement.dll
+D:\DIT-GitHub\RacingRage\GameStateManagement\obj\Windows Phone\Release\GameStateManagement.pdb

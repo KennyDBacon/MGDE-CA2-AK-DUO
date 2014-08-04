@@ -22,6 +22,7 @@ using System.IO.IsolatedStorage;
 using System.Xml.Linq;
 using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Media;
+using AdDuplex.Xna;
 #endregion
 
 namespace GameStateManagement
@@ -49,6 +50,8 @@ namespace GameStateManagement
         SpriteFont font;
         Texture2D blankTexture;
 
+        AdManager adDuplex;
+
         bool isInitialized;
 
         bool traceEnabled;
@@ -56,6 +59,20 @@ namespace GameStateManagement
         #endregion
 
         #region Properties
+        public AdManager getAd
+        {
+            get { return adDuplex; }
+            set { adDuplex = value; }
+        }
+
+        public bool enableAd
+        {
+            get { return showAd; }
+            set { showAd = value; }
+        }
+
+        bool showAd = false;
+
         public bool playerReady
         {
             get { return isPlayerReady; }
@@ -94,7 +111,7 @@ namespace GameStateManagement
             set { isAccelerometer = value; }
         }
 
-        bool isAccelerometer = true;
+        bool isAccelerometer = false;
 
         public bool engineSoundBool
         {
@@ -204,6 +221,9 @@ namespace GameStateManagement
             {
                 screen.Activate(false);
             }
+
+            adDuplex = new AdManager(Game, "112099" /* your AppId here */);
+            adDuplex.LoadContent();
         }
 
 

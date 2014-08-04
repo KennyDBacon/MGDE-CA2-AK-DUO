@@ -1,0 +1,28 @@
+﻿<xapCache source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Racing Rage.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="8/4/2014 12:36:53 PM">
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\tileThumbnail.png" archivePath="tileThumbnail.png" lastWriteTime="7/14/2014 12:23:04 AM" />
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\GameThumbnail.png" archivePath="GameThumbnail.png" lastWriteTime="7/14/2014 12:41:18 AM" />
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="8/4/2014 11:30:47 AM" />
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="7/14/2014 1:05:34 AM" />
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Racing Rage.dll" archivePath="Racing Rage.dll" lastWriteTime="8/4/2014 12:36:51 PM" />
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\AdDuplex.Xna.dll" archivePath="AdDuplex.Xna.dll" lastWriteTime="9/5/2011 1:49:10 PM" />
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagement\bin\Windows Phone\Release\GameStateManagement.dll" archivePath="GameStateManagement.dll" lastWriteTime="8/4/2014 12:35:26 PM" />
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\background.xnb" archivePath="Content\background.xnb" lastWriteTime="8/4/2014 11:30:42 AM" />
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\blank.xnb" archivePath="Content\blank.xnb" lastWriteTime="8/4/2014 11:30:42 AM" />
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\gradient.xnb" archivePath="Content\gradient.xnb" lastWriteTime="8/4/2014 11:30:42 AM" />
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\road.xnb" archivePath="Content\road.xnb" lastWriteTime="8/4/2014 11:30:42 AM" />
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\roadEnd.xnb" archivePath="Content\roadEnd.xnb" lastWriteTime="8/4/2014 11:30:42 AM" />
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\ui.xnb" archivePath="Content\ui.xnb" lastWriteTime="8/4/2014 11:30:42 AM" />
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\playerCar.xnb" archivePath="Content\playerCar.xnb" lastWriteTime="8/4/2014 11:30:42 AM" />
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\enemyCar.xnb" archivePath="Content\enemyCar.xnb" lastWriteTime="8/4/2014 11:30:42 AM" />
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\fuelCan.xnb" archivePath="Content\fuelCan.xnb" lastWriteTime="8/4/2014 11:30:42 AM" />
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\SPLOGO.xnb" archivePath="Content\SPLOGO.xnb" lastWriteTime="8/4/2014 11:30:42 AM" />
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\Title_Background_Pattern.xnb" archivePath="Content\Title_Background_Pattern.xnb" lastWriteTime="8/4/2014 11:30:42 AM" />
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\menufont.xnb" archivePath="Content\menufont.xnb" lastWriteTime="8/4/2014 11:30:42 AM" />
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\gamefont.xnb" archivePath="Content\gamefont.xnb" lastWriteTime="8/4/2014 11:30:42 AM" />
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\smallerGameFont.xnb" archivePath="Content\smallerGameFont.xnb" lastWriteTime="8/4/2014 11:30:42 AM" />
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\engineLoop.xnb" archivePath="Content\engineLoop.xnb" lastWriteTime="8/4/2014 11:30:42 AM" />
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\Car Crash.xnb" archivePath="Content\Car Crash.xnb" lastWriteTime="8/4/2014 11:30:42 AM" />
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\WinMusic.xnb" archivePath="Content\WinMusic.xnb" lastWriteTime="8/4/2014 11:30:42 AM" />
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\Cheesy Track.xnb" archivePath="Content\Cheesy Track.xnb" lastWriteTime="8/4/2014 11:30:47 AM" />
+  <file source="D:\DIT-GitHub\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\Cheesy Track.wma" archivePath="Content\Cheesy Track.wma" lastWriteTime="8/4/2014 11:30:46 AM" />
+</xapCache>

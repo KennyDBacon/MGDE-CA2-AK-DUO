@@ -11,3 +11,10 @@ D:\DIT-GitHub\RacingRage\GameStateManagement\obj\Windows Phone\Release\Microsoft
 D:\DIT-GitHub\RacingRage\GameStateManagement\obj\Windows Phone\Release\GameStateManagement.dll
 D:\DIT-GitHub\RacingRage\GameStateManagement\obj\Windows Phone\Release\GameStateManagement.pdb
 D:\DIT-GitHub\RacingRage\GameStateManagement\obj\Windows Phone\Release\GameStateManagement (Windows Phone).csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagement\bin\Windows Phone\Release\GameStateManagement.dll
+C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagement\bin\Windows Phone\Release\GameStateManagement.pdb
+C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagement\bin\Windows Phone\Release\AdDuplex.Xna.dll
+C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagement\bin\Windows Phone\Release\SOMAWP7.dll
+C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagement\obj\Windows Phone\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagement\obj\Windows Phone\Release\GameStateManagement.dll
+C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagement\obj\Windows Phone\Release\GameStateManagement.pdb

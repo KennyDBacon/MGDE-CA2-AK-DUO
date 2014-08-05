@@ -39,6 +39,7 @@ namespace GameStateManagementSample
         {
             ScreenManager.engineSoundBool = true;
             LoadingScreen.Load(ScreenManager, true, PlayerIndex.One, new GameplayScreen());
+            ScreenManager.enableAnimation = false;
             ExitScreen();
         }
 

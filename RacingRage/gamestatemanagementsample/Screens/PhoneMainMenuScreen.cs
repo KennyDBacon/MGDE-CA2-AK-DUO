@@ -121,11 +121,11 @@ namespace GameStateManagementSample
 
             if (ScreenManager.enableMusic == false)
             {
-                MediaPlayer.Pause();
+                MediaPlayer.Stop();
             }
             else 
             {
-                MediaPlayer.Resume();
+                MediaPlayer.Play(ScreenManager.cheesymusic);
             }
             checkButton();
         }

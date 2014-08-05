@@ -61,6 +61,14 @@ namespace GameStateManagement
         #endregion
 
         #region Properties
+        public bool enableAnimation
+        {
+            get { return animationStart; }
+            set { animationStart = value; }
+        }
+
+        bool animationStart = false;
+
         public AdManager getAd
         {
             get { return adDuplex; }

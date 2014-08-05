@@ -20,6 +20,8 @@ using Microsoft.Devices;
 using Microsoft.Xna.Framework.Media;
 using AdDuplex.Xna;
 using SOMAWP7;
+using Microsoft.Advertising.Mobile.UI;
+using System.Windows.Controls;
 #endregion
 
 namespace GameStateManagementSample
@@ -57,7 +59,7 @@ namespace GameStateManagementSample
         // Sprites positions
         Vector2 roadOneVect = new Vector2(0, 0);
         Vector2 roadTwoVect = new Vector2(0, -800);
-        Vector2 roadEndVect = new Vector2(0, -80000);
+        Vector2 roadEndVect = new Vector2(0, -8000);
 
         Vector2 UICarVect = new Vector2(416, 570);
 
@@ -89,8 +91,11 @@ namespace GameStateManagementSample
         int carWidth;
         int carHeight;
 
+        float roadLength;
+        float endingAnimationDeccelaration = 20;
+
         float fuelTransparency = 0.0f;
-        int fuelPerTurn = 5;
+        int fuelPerTurn = 3;
         bool fuelExist = false;
 
         float timer = 1.0f;
@@ -117,6 +122,7 @@ namespace GameStateManagementSample
 
             // Spawn car at the start of the game
             enemyCarNum = enemyCarsVect.Length;
+            roadLength = Math.Abs(480 / (roadEndVect.Y / 50));
             //carSpawner();
 
             pauseAction = new InputAction(
@@ -159,7 +165,7 @@ namespace GameStateManagementSample
                 carHeight = playerCar.Height;
                 //carSpawner();
 
-                fuelRect = new Rectangle(0, 0, 0, 0);
+                fuelRect = new Rectangle(0, 0, fuelCan.Width, fuelCan.Height);
 
                 playerRect = new Rectangle(Convert.ToInt32(playerPosition.X + 4), Convert.ToInt32(playerPosition.Y + 4), carWidth - 8, carHeight - 8);
                 
@@ -185,6 +191,7 @@ namespace GameStateManagementSample
                 PickupSound = content.Load<SoundEffect>("Pickup-Sound");
                 PickupInstance = PickupSound.CreateInstance();
 
+                resetGame();
                 // Reset the elapsed time when this screen is activated
                 ScreenManager.Game.ResetElapsedTime();
             }
@@ -263,6 +270,7 @@ namespace GameStateManagementSample
                 if (ScreenManager.resetGame == true)
                 {
                     ScreenManager.resetGame = false;
+                    fuelExist = true;
                     resetGame();
                 }
 
@@ -271,7 +279,7 @@ namespace GameStateManagementSample
                     //
                     // Accelerometer
                     //
-                    if (ScreenManager.enableAccelerometer == true)
+                    if (ScreenManager.enableAccelerometer == true && ScreenManager.enableAnimation == false)
                     {
                         //poll the acceleration value
                         Vector3 acceleration = Accelerometer.GetState().Acceleration;
@@ -376,25 +384,40 @@ namespace GameStateManagementSample
 
                     //Win Statement
                     //If goes through successfully, the game will end
-                    UITimer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
-                    if (UITimer <= 0)
-                    {
-                        UITimer = 0.1f;
-                        UICarVect.Y -= 1;
-                        if (UICarVect.Y == 115)
-                        {
-                            roadEndVect.Y = -800;
-                            clearCars();
-                        }
-                    }
+                    //UITimer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    //if (UITimer != 0)
+                    //{
+                    //    UITimer = 0.1f;
+                    //    UICarVect.Y -= 1;
+                    //    if (UICarVect.Y <= 115)
+                    //    {
+                    //        roadEndVect.Y = -800;
+                    //        clearCars();
+                    //    }
+                    //}
 
-                    if (roadEndVect.Y == 300)
-                    {
-                        ScreenManager.playerReady = false;
-                        EngineInstance.Pause();
-                        WinMusicInstance.Play();
-                        ScreenManager.AddScreen(new WinScreen(), PlayerIndex.One);
-                    }
+                    //UICarVect.Y -= 1;
+                    //if (UICarVect.Y <= 100)
+                    //{
+                    //    clearCars();
+                    //}
+
+                    //if (roadEndVect.Y == 300)
+                    //{
+                    //    // Win Animation
+                    //    ScreenManager.enableAnimation = true;
+                    //    if (playerPosition.Y >= -100)
+                    //    {
+                    //        playerPosition.Y += 5;
+                    //    }
+                    //    else
+                    //    {
+                    //        ScreenManager.playerReady = false;
+                    //        EngineInstance.Pause();
+                    //        WinMusicInstance.Play();
+                    //        ScreenManager.AddScreen(new WinScreen(), PlayerIndex.One);
+                    //    }
+                    //}
                     if (fuelCounter <= 0)
                     {
                         ScreenManager.AddScreen(new GameOverScreen(), PlayerIndex.One);
@@ -405,74 +428,102 @@ namespace GameStateManagementSample
                     //
                     // Road Movement
                     //
-                    roadOneVect.Y += 50;
-                    roadTwoVect.Y += 50;
-                    roadEndVect.Y += 50;
+                    if (ScreenManager.enableAnimation == false)
+                    {
+                        roadOneVect.Y += 50;
+                        roadTwoVect.Y += 50;
+                        roadEndVect.Y += 50;
 
+                        UICarVect.Y -= roadLength;
+
+                        // Fuel movement
+                        fuelVect.Y += 20;
+                        fuelRect.Y += 20;
+
+                        // Enemy car movement
+                        for (int i = 0; i < enemyCarNum; i++)
+                        {
+                            enemyCarsVect[i].Y += 20;
+                            enemyRect[i].Y += 20;
+                        }
+
+                        // Respawn car when they leave bottom of the screen
+                        enemyPositionCounter += 20;
+
+                        if (enemyPositionCounter >= 1600)
+                        {
+                            fuelPerTurn--;
+
+                            if (fuelPerTurn < 1)
+                            {
+                                fuelPerTurn = 3;
+                                fuelTransparency = 1.0f;
+                                fuelExist = true;
+                            }
+                            else
+                            {
+                                fuelTransparency = 0.0f;
+                                fuelExist = false;
+                            }
+
+                            carSpawner();
+                            enemyPositionCounter = -800;
+                        }
+
+                        for (int i = 0; i < enemyCarNum; i++)
+                        {
+                            hitTest(i);
+
+                            if (fuelExist == true)
+                            {
+                                fuelPickUp();
+                            }
+                        }
+                    }
+
+                    // Looping of two road sprite
                     if (roadOneVect.Y >= 800)
                         roadOneVect.Y = -800;
                     else if (roadTwoVect.Y >= 800)
                         roadTwoVect.Y = -800;
 
+                    if (roadEndVect.Y == -1600)
+                    {
+                        clearCars();
+                    }
+
+                    // When ending reached, put ending sprite in between two road sprite
                     if (roadEndVect.Y == -800)
                     {
                         roadOneVect.Y = 0;
                         roadTwoVect.Y = -1600;
+                        clearCars();
                     }
 
-                    if (roadEndVect.Y == 800)
+                    // Actual end
+                    if (roadEndVect.Y == 150)
                     {
-                        // For testing
-                        roadOneVect.Y = 0;
-                        roadTwoVect.Y = -800;
-                        roadEndVect.Y = -80000;
-                    }
-                    //
-                    //
-
-                    // Fuel movement
-                    fuelVect.Y += 20;
-
-                    // Car movement
-                    // Car collision detection
-                    for (int i = 0; i < enemyCarNum; i++)
-                    {
-                        enemyCarsVect[i].Y += 20;
-                        enemyRect[i].Y += 20;
-                    }
-
-                    // Respawn car when they leave bottom of the screen
-                    enemyPositionCounter += 20;
-
-                    if (enemyPositionCounter >= 1600)
-                    {
-                        fuelPerTurn--;
-
-                        if (fuelPerTurn < 1)
+                        if (ScreenManager.enableAnimation == false)
                         {
-                            fuelPerTurn = 5;
-                            fuelTransparency = 1.0f;
-                            fuelExist = true;
+                            EngineInstance.Pause();
+                            WinMusicInstance.Play();
+                        }
+
+                        ScreenManager.enableAnimation = true;
+
+                        if (endingAnimationDeccelaration > 0)
+                        {
+                            playerPosition.Y -= endingAnimationDeccelaration;
+                            endingAnimationDeccelaration--;
                         }
                         else
                         {
-                            fuelTransparency = 0.0f;
-                            fuelExist = false;
-                        }
-
-                        carSpawner();
-                        enemyPositionCounter = -800;
-                    }
-
-                    for (int i = 0; i < enemyCarNum; i++)
-                    {
-                        hitTest(i);
-
-                        if (fuelExist == true)
-                        {
-                            fuelPickUp();
+                            ScreenManager.playerReady = false;
+                            ScreenManager.AddScreen(new WinScreen(), PlayerIndex.One);
                         }
                     }
+                    //
+                    //
                 }
             }
         }
@@ -570,7 +621,7 @@ namespace GameStateManagementSample
             enemyCarsVect[1].Y = -3200;
             enemyCarsVect[2].Y = -3200;
             enemyCarsVect[3].Y = -3200;
-            fuelVect.Y = 2000;
+            fuelVect.Y = -3200;
         }
 
         private void setFuelVector(int index)
@@ -649,33 +700,38 @@ namespace GameStateManagementSample
         private void resetGame()
         {
             ScreenManager.playerReady = false;
-
+            playerPosition = new Vector2(200, 400);
+            UICarVect.Y = 570;
             roadOneVect.Y = 0;
             roadTwoVect.Y = -800;
-            roadEndVect.Y = -80000;
+            roadEndVect.Y = -8000;
+
+            if (fuelExist == true)
+            {
+                fuelExist = false;
+                fuelPerTurn = 3;
+            }
+            else
+            {
+                fuelPerTurn--;
+            }
 
             readyCrashText = "Ready?";
 
             carSpawner();
             enemyPositionCounter = -800;
+            endingAnimationDeccelaration = 20;
         }
 
         //Used on every new round
         private void resetGame(int timePause)
         {
             ScreenManager.playerReady = false;
+
             EngineInstance.Pause();
             EngineInstance.Pitch = 0;
             gearNumEngine = 1;
             ScreenManager.engineSoundBool = false;
-            roadOneVect.Y = 0;
-            roadTwoVect.Y = -800;
-            roadEndVect.Y = -80000;
-
-            carSpawner();
-            enemyPositionCounter = -800;
-
-            readyCrashText = "Crash!";
 
             if (ScreenManager.enableSoundEffect)
             {
@@ -726,7 +782,7 @@ namespace GameStateManagementSample
             else
             {
                 // If Accelerometer is off, touch input will be used
-                if (ScreenManager.enableAccelerometer == false)
+                if (ScreenManager.enableAccelerometer == false && ScreenManager.enableAnimation == false)
                 {
                     //// Otherwise move the player position.
                     Vector2 movement = Vector2.Zero;
@@ -807,12 +863,9 @@ namespace GameStateManagementSample
             for (int i = 0; i < enemyCarNum; i++)
             {
                 spriteBatch.Draw(enemyCar, enemyCarsVect[i], Color.White);
-
-                if (fuelInLane == i)
-                {
-                    spriteBatch.Draw(fuelCan, fuelRect, Color.White * fuelTransparency);
-                }
             }
+
+            spriteBatch.Draw(fuelCan, fuelRect, Color.White * fuelTransparency);
 
             spriteBatch.Draw(sideUI, new Vector2(390, 0), Color.White);
             spriteBatch.DrawString(smallerGameFont, fuel, new Vector2(475 - smallerGameFont.MeasureString(fuel).X, 680), Color.Black);

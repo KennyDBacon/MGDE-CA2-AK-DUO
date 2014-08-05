@@ -94,6 +94,13 @@ namespace GameStateManagementSample
                     else
                         b.Text = "Sound: Off";
                 }
+                else if (b.Text.Contains("Control"))
+                {
+                    if (ScreenManager.enableAccelerometer == true)
+                        b.Text = "Control: Gyro";
+                    else
+                        b.Text = "Control: Touch";
+                }
             }
         }
 

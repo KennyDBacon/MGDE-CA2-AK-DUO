@@ -23,6 +23,7 @@ using System.Xml.Linq;
 using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Media;
 using AdDuplex.Xna;
+using SOMAWP7;
 #endregion
 
 namespace GameStateManagement
@@ -51,6 +52,7 @@ namespace GameStateManagement
         Texture2D blankTexture;
 
         AdManager adDuplex;
+        SomaAd somaAd;
 
         bool isInitialized;
 
@@ -63,6 +65,11 @@ namespace GameStateManagement
         {
             get { return adDuplex; }
             set { adDuplex = value; }
+        }
+
+        public SomaAd getSomaAd
+        {
+            get { return somaAd; }
         }
 
         public bool enableAd
@@ -92,26 +99,45 @@ namespace GameStateManagement
         public bool enableMusic
         {
             get { return music; }
-            set { music = value; }
+            set
+            {
+                music = value;
+                // Save our setting everytime we change the setting
+                UpdateSetting("enableMusic", music);
+                // Save the settings so it is committed.
+                SaveSettings();
+            }
         }
 
-        bool music = true;
+        bool music;
 
         public bool enableSoundEffect
         {
             get { return soundEffect; }
-            set { soundEffect = value; }
+            set
+            {
+                soundEffect = value;
+                // Save our setting everytime we change the setting
+                UpdateSetting("enableSoundEffect", soundEffect);
+                // Save the settings so it is committed.
+                SaveSettings();
+            }
         }
 
-        bool soundEffect = true;
+        bool soundEffect;
 
         public bool enableAccelerometer
         {
             get { return isAccelerometer; }
-            set { isAccelerometer = value; }
+            set 
+            {
+                isAccelerometer = value;
+                UpdateSetting("enableAccelerometer", isAccelerometer);
+                SaveSettings();
+            }
         }
 
-        bool isAccelerometer = true;
+        bool isAccelerometer;
 
         public bool engineSoundBool
         {
@@ -181,6 +207,11 @@ namespace GameStateManagement
             // we must set EnabledGestures before we can query for them, but
             // we don't assume the game wants to read them.
             TouchPanel.EnabledGestures = GestureType.None;
+
+            // Default settings for all should be true
+            enableSoundEffect = GetSetting("enableSoundEffect", true);
+            enableMusic = GetSetting("enableMusic", true);
+            enableAccelerometer = GetSetting("enableAccelerometer", true);
         }
 
 
@@ -224,6 +255,10 @@ namespace GameStateManagement
 
             adDuplex = new AdManager(Game, "112307");
             adDuplex.LoadContent();
+
+            somaAd = new SomaAd();
+            somaAd.Adspace = 923881181;
+            somaAd.Pub = 923881181;
         }
 
 
@@ -291,6 +326,75 @@ namespace GameStateManagement
             MediaPlayer.Play(cheesymusic);
             MediaPlayer.IsRepeating = true;
         }
+
+        #region Isolated Settings
+        // Used for saving settings across instances of our app.
+        // Alvin: If the IsolatedStorageSettings refuses to turn blue (to recognise the type), 
+        // remember to add the System.Windows reference in the project holding ScreenManager
+        static IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
+
+
+        /// <summary>
+        /// Update a setting value for our application. If the setting does not
+        /// exist, then the setting will be added.
+        /// </summary>
+        /// <param name="Key"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public void UpdateSetting(string Key, Object value)
+        {
+            // If the key exists
+            if (settings.Contains(Key))
+            {
+                // If the value has changed
+                if (settings[Key] != value)
+                {
+                    // Store the new value
+                    settings[Key] = value;
+                }
+            }
+            // Otherwise create the key.
+            else
+            {
+                settings.Add(Key, value);
+            }
+        }
+
+        /// <summary>
+        /// Get the current value of the setting, or if it is not found, set the 
+        /// setting to the default setting.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="Key"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
+        public static T GetSetting<T>(string Key, T defaultValue)
+        {
+            T value;
+
+            // If the key exists, retrieve the value.
+            if (settings.Contains(Key))
+            {
+                value = (T)settings[Key];
+            }
+            // Otherwise, use the default value.
+            else
+            {
+                value = defaultValue;
+            }
+            return value;
+        }
+
+        /// <summary>
+        /// Save the settings.
+        /// </summary>
+        public void SaveSettings()
+        {
+            settings.Save();
+        }
+
+
+        #endregion
 
         #region Update and Draw
 

@@ -53,18 +53,6 @@
     <Reference Include="AdDuplex.Xna">
       <HintPath>..\..\..\..\..\Desktop\adduplex\AdDuplex.Xna.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Advertising.Mobile">
-      <HintPath>..\Microsoft.Advertising.Mobile.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Advertising.Mobile.resources">
-      <HintPath>..\Microsoft.Advertising.Mobile.resources.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Advertising.Mobile.UI">
-      <HintPath>..\Microsoft.Advertising.Mobile.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Advertising.Mobile.Xna">
-      <HintPath>..\Microsoft.Advertising.Mobile.Xna.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Phone, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Xna.Framework">
       <Private>False</Private>

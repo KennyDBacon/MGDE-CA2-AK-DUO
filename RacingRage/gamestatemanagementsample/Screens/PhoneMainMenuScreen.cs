@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Media;
 using System.IO;
 using System.IO.IsolatedStorage;
-using AdDuplex.Xna;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace GameStateManagementSample
 {
@@ -106,11 +106,13 @@ namespace GameStateManagementSample
 
         void playButton_Tapped(object sender, EventArgs e)
         {
+            ScreenManager.enableMainMenuAd = false;
             LoadingScreen.Load(ScreenManager, true, PlayerIndex.One, new GameplayScreen());
         }
 
         void creditsButton_Tapped(object sender, EventArgs e)
         {
+            ScreenManager.enableMainMenuAd = false;
             LoadingScreen.Load(ScreenManager, true, PlayerIndex.One, new CreditsScreen());
         }
 
@@ -151,6 +153,18 @@ namespace GameStateManagementSample
                 ScreenManager.enableAccelerometer = !ScreenManager.enableAccelerometer;
                 button.Text = "Control: Touch";
             }
+        }
+
+        public override void Draw(GameTime gameTime)
+        {
+            SpriteBatch spriteBatch = ScreenManager.SpriteBatch;
+            
+            if (ScreenManager.enableMainMenuAd == true)
+            {
+                ScreenManager.getAd.Draw(spriteBatch, new Vector2(0, 725));
+            }
+
+            base.Draw(gameTime);
         }
 
         protected override void OnCancel()

@@ -14,6 +14,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
+using AdDuplex.Xna;
 
 namespace GameStateManagementSample
 {
@@ -55,6 +56,7 @@ namespace GameStateManagementSample
 
         public override void Activate(bool instancePreserved)
         {
+            ScreenManager.enableMainMenuAd = true;
             // When the screen is activated, we have a valid ScreenManager so we can arrange
             // our buttons on the screen
             float y = 140f;
@@ -79,6 +81,8 @@ namespace GameStateManagementSample
             }
 
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
+
+            ScreenManager.getAd.Update(gameTime);
         }
 
         /// <summary>

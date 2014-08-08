@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\background.xnb</Output>
+      <Output>C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\background.xnb</Output>
       <Time>2014-08-04T20:28:58.1387062+08:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\blank.xnb</Output>
+      <Output>C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\blank.xnb</Output>
       <Time>2014-08-04T20:28:58.1387062+08:00</Time>
     </Item>
     <Item>
@@ -25,7 +25,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\gradient.xnb</Output>
+      <Output>C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\gradient.xnb</Output>
       <Time>2014-08-04T20:28:58.1437065+08:00</Time>
     </Item>
     <Item>
@@ -34,7 +34,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\road.xnb</Output>
+      <Output>C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\road.xnb</Output>
       <Time>2014-08-04T20:28:58.1477067+08:00</Time>
     </Item>
     <Item>
@@ -43,7 +43,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\roadEnd.xnb</Output>
+      <Output>C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\roadEnd.xnb</Output>
       <Time>2014-08-04T20:28:58.1487068+08:00</Time>
     </Item>
     <Item>
@@ -52,7 +52,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\ui.xnb</Output>
+      <Output>C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\ui.xnb</Output>
       <Time>2014-08-04T20:28:58.1497068+08:00</Time>
     </Item>
     <Item>
@@ -64,7 +64,7 @@
         <Data Key="ColorKeyColor">255, 255, 255, 255</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\playerCar.xnb</Output>
+      <Output>C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\playerCar.xnb</Output>
       <Time>2014-08-04T20:28:58.1447065+08:00</Time>
     </Item>
     <Item>
@@ -76,7 +76,7 @@
         <Data Key="ColorKeyColor">255, 255, 255, 255</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\enemyCar.xnb</Output>
+      <Output>C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\enemyCar.xnb</Output>
       <Time>2014-08-04T20:28:58.1397062+08:00</Time>
     </Item>
     <Item>
@@ -85,7 +85,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\fuelCan.xnb</Output>
+      <Output>C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\fuelCan.xnb</Output>
       <Time>2014-08-04T20:28:58.1437065+08:00</Time>
     </Item>
     <Item>
@@ -94,7 +94,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\SPLOGO.xnb</Output>
+      <Output>C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\SPLOGO.xnb</Output>
       <Time>2014-08-04T20:28:58.1307057+08:00</Time>
     </Item>
     <Item>
@@ -103,7 +103,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\Title_Background_Pattern.xnb</Output>
+      <Output>C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\Title_Background_Pattern.xnb</Output>
       <Time>2014-08-04T20:28:58.1307057+08:00</Time>
     </Item>
     <Item>
@@ -112,8 +112,17 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\transparent.xnb</Output>
+      <Output>C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\transparent.xnb</Output>
       <Time>2014-08-04T20:28:58.1487068+08:00</Time>
+    </Item>
+    <Item>
+      <Source>sampleAd.png</Source>
+      <Name>sampleAd</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\sampleAd.xnb</Output>
+      <Time>2014-08-08T14:26:48.4054065+08:00</Time>
     </Item>
     <Item>
       <Source>menufont.spritefont</Source>
@@ -121,7 +130,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\menufont.xnb</Output>
+      <Output>C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\menufont.xnb</Output>
       <Time>2014-08-04T20:28:58.1437065+08:00</Time>
     </Item>
     <Item>
@@ -130,7 +139,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\gamefont.xnb</Output>
+      <Output>C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\gamefont.xnb</Output>
       <Time>2014-08-04T20:28:58.1437065+08:00</Time>
     </Item>
     <Item>
@@ -139,7 +148,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\smallerGameFont.xnb</Output>
+      <Output>C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\smallerGameFont.xnb</Output>
       <Time>2014-08-04T20:28:58.1487068+08:00</Time>
     </Item>
     <Item>
@@ -148,7 +157,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\engineLoop.xnb</Output>
+      <Output>C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\engineLoop.xnb</Output>
       <Time>2014-08-04T20:28:58.1427064+08:00</Time>
     </Item>
     <Item>
@@ -157,7 +166,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\Car Crash.xnb</Output>
+      <Output>C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\Car Crash.xnb</Output>
       <Time>2014-08-04T20:28:58.0887033+08:00</Time>
     </Item>
     <Item>
@@ -166,7 +175,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\WinMusic.xnb</Output>
+      <Output>C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\WinMusic.xnb</Output>
       <Time>2014-08-04T20:28:58.1367061+08:00</Time>
     </Item>
     <Item>
@@ -175,7 +184,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\Pickup-Sound.xnb</Output>
+      <Output>C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\Pickup-Sound.xnb</Output>
       <Time>2014-08-04T20:28:58.1307057+08:00</Time>
     </Item>
     <Item>
@@ -184,8 +193,8 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\Cheesy Track.xnb</Output>
-      <Extra>C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\Cheesy Track.wma</Extra>
+      <Output>C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\Cheesy Track.xnb</Output>
+      <Extra>C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\Cheesy Track.wma</Extra>
       <Time>2014-08-04T20:28:58.1287056+08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
@@ -195,10 +204,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Release</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\user\Desktop\Copies\Actual\RacingRage\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagementSample\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagementSample\obj\Windows Phone\Release\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\user\Desktop\Copies\Actual\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\user\Desktop\Copies\RacingRage\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\obj\Windows Phone\Release\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

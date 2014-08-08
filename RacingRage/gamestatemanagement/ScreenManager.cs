@@ -69,15 +69,16 @@ namespace GameStateManagement
 
         bool animationStart = false;
 
+        public SomaAd getSoma
+        {
+            get { return somaAd; }
+            set { somaAd = value; }
+        }
+
         public AdManager getAd
         {
             get { return adDuplex; }
             set { adDuplex = value; }
-        }
-
-        public SomaAd getSomaAd
-        {
-            get { return somaAd; }
         }
 
         public bool enableAd
@@ -87,6 +88,14 @@ namespace GameStateManagement
         }
 
         bool showAd = false;
+
+        public bool enableMainMenuAd
+        {
+            get { return mainMenuAd; }
+            set { mainMenuAd = value; }
+        }
+
+        bool mainMenuAd = true;
 
         public bool playerReady
         {
@@ -238,6 +247,13 @@ namespace GameStateManagement
             Game.Components.Add(musicManager);
 
             Accelerometer.Initialize();
+
+            somaAd = new SomaAd();
+            somaAd.Adspace = 923881181;
+            somaAd.Pub = 923881181;
+            somaAd.AdSpaceWidth = 80;
+            somaAd.AdSpaceWidth = 480;
+            somaAd.GetAd();
         }
 
 
@@ -263,10 +279,6 @@ namespace GameStateManagement
 
             adDuplex = new AdManager(Game, "112307");
             adDuplex.LoadContent();
-
-            somaAd = new SomaAd();
-            somaAd.Adspace = 923881181;
-            somaAd.Pub = 923881181;
         }
 
 

@@ -20,8 +20,11 @@ using Microsoft.Devices;
 using Microsoft.Xna.Framework.Media;
 using AdDuplex.Xna;
 using SOMAWP7;
-using Microsoft.Advertising.Mobile.UI;
 using System.Windows.Controls;
+using Microsoft.Xna.Framework.Input.Touch;
+using Microsoft.Phone.Tasks;
+using System.IO.IsolatedStorage;
+using System.IO;
 #endregion
 
 namespace GameStateManagementSample
@@ -38,6 +41,7 @@ namespace GameStateManagementSample
         ContentManager content;
         SpriteFont gameFont;
         SpriteFont smallerGameFont;
+        SpriteBatch spriteBatch;
 
         Vector2 playerPosition = new Vector2(200, 400);
         Vector2 enemyPosition = new Vector2(100, 100);
@@ -107,6 +111,12 @@ namespace GameStateManagementSample
         string fuel;
 
         string readyCrashText = "Ready?";
+
+        // Smaato Ad
+        Texture2D textureSomaAd;
+        Vector2 somaAdPosition = new Vector2(0, 720);
+        Vector2 somaAdSize = new Vector2(480, 80);
+        string currentAdImageFileName = "";
         #endregion
 
         #region Initialization
@@ -129,6 +139,8 @@ namespace GameStateManagementSample
                 new Buttons[] { Buttons.Start, Buttons.Back },
                 new Keys[] { Keys.Escape },
                 true);
+
+            TouchPanel.EnabledGestures = GestureType.Tap;
         }
 
         /// <summary>
@@ -145,6 +157,10 @@ namespace GameStateManagementSample
             {
                 if (content == null)
                     content = new ContentManager(ScreenManager.Game.Services, "Content");
+
+                spriteBatch = new SpriteBatch(ScreenManager.GraphicsDevice);
+
+                textureSomaAd = content.Load<Texture2D>("sampleAd");
 
                 // Load fonts
                 gameFont = content.Load<SpriteFont>("gamefont");
@@ -223,7 +239,7 @@ namespace GameStateManagementSample
         public override void Unload()
         {
             content.Unload();
-
+            ScreenManager.getSoma.Dispose();
 #if WINDOWS_PHONE
             Microsoft.Phone.Shell.PhoneApplicationService.Current.State.Remove("PlayerPosition");
             Microsoft.Phone.Shell.PhoneApplicationService.Current.State.Remove("EnemyPosition");
@@ -246,7 +262,54 @@ namespace GameStateManagementSample
         {
             base.Update(gameTime, otherScreenHasFocus, false);
 
-            ScreenManager.getAd.Update(gameTime);
+            #region SomaAd
+            // if the ad panel was tapped, show the click thru ad
+            if (ScreenManager.enableAd == true)
+            {
+                while (TouchPanel.IsGestureAvailable)
+                {
+                    GestureSample gestureSample = TouchPanel.ReadGesture();
+
+                    if (gestureSample.GestureType == GestureType.Tap)
+                    {
+                        Vector2 touchPosition = gestureSample.Position;
+
+                        if (touchPosition.X >= 0 &&
+                            touchPosition.X < somaAdSize.X &&
+                            touchPosition.Y >= somaAdPosition.Y &&
+                            touchPosition.Y < (somaAdPosition.Y + somaAdSize.Y))
+                        {
+                            WebBrowserTask webBrowserTask = new WebBrowserTask();
+                            webBrowserTask.Uri = new Uri(ScreenManager.getSoma.Uri);
+                            webBrowserTask.Show();
+                        }
+                    }
+                }
+            }
+
+            // if there is a new ad, get it from Isolated Storage and  show it
+            if (ScreenManager.getSoma.Status == "success" && ScreenManager.getSoma.AdImageFileName != null && ScreenManager.getSoma.ImageOK)
+            {
+                try
+                {
+                    if (currentAdImageFileName != ScreenManager.getSoma.AdImageFileName)
+                    {
+                        currentAdImageFileName = ScreenManager.getSoma.AdImageFileName;
+                        IsolatedStorageFile myIsoStore = IsolatedStorageFile.GetUserStoreForApplication();
+                        IsolatedStorageFileStream myAd = new IsolatedStorageFileStream(ScreenManager.getSoma.AdImageFileName, FileMode.Open, myIsoStore);
+                        textureSomaAd = Texture2D.FromStream(ScreenManager.GraphicsDevice, myAd);
+
+                        myAd.Close();
+                        myAd.Dispose();
+                        myIsoStore.Dispose();
+                    }
+                }
+                catch (IsolatedStorageException ise)
+                {
+                    string message = ise.Message;
+                }
+            }
+            #endregion
 
             // Gradually fade in or out depending on whether we are covered by the pause screen.
             if (coveredByOtherScreen)
@@ -276,9 +339,7 @@ namespace GameStateManagementSample
 
                 if (ScreenManager.playerReady == true)
                 {
-                    //
-                    // Accelerometer
-                    //
+                    #region Accelerometer
                     if (ScreenManager.enableAccelerometer == true && ScreenManager.enableAnimation == false)
                     {
                         //poll the acceleration value
@@ -314,12 +375,9 @@ namespace GameStateManagementSample
                             }
                         }
                     }
-                    //
-                    //
+                    #endregion
 
-                    //
-                    // Engine Vroom Vroom
-                    //
+                    #region Engine Sound
                     if (ScreenManager.enableSoundEffect == true)
                     {
                         if (ScreenManager.engineSoundBool == true)
@@ -365,6 +423,8 @@ namespace GameStateManagementSample
                                 break;
                         }
                     }
+                    #endregion
+
                     timer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
 
                     if (timer <= 0)
@@ -747,10 +807,7 @@ namespace GameStateManagementSample
                 ScreenManager.AddScreen(new GameOverScreen(), PlayerIndex.One);
             }
         }
-        /// <summary>
-        /// Lets the game respond to player input. Unlike the Update method,
-        /// this will only be called when the gameplay screen is active.
-        /// </summary>
+        
         public override void HandleInput(GameTime gameTime, InputState input)
         {
             if (input == null)
@@ -838,17 +895,11 @@ namespace GameStateManagementSample
             return direction;
         }
 
-        /// <summary>
-        /// Draws the gameplay screen.
-        /// </summary>
         public override void Draw(GameTime gameTime)
         {
             // This game has a blue background. Why? Because!
             ScreenManager.GraphicsDevice.Clear(ClearOptions.Target,
                                                Color.CornflowerBlue, 0, 0);
-
-            // Our player and enemy are both actually just text strings.
-            SpriteBatch spriteBatch = ScreenManager.SpriteBatch;
 
             Viewport viewport = ScreenManager.GraphicsDevice.Viewport;
 
@@ -887,7 +938,9 @@ namespace GameStateManagementSample
 
             if (ScreenManager.enableAd == true)
             {
-                ScreenManager.getAd.Draw(spriteBatch, new Vector2(0, viewport.Height - 75));
+                spriteBatch.Begin();
+                spriteBatch.Draw(textureSomaAd, new Rectangle(0, 720, 480, 80), Color.White);
+                spriteBatch.End();
             }
         }
 

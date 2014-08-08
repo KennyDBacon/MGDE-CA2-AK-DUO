@@ -10,6 +10,7 @@ Content\fuelCan.xnb
 Content\SPLOGO.xnb
 Content\Title_Background_Pattern.xnb
 Content\transparent.xnb
+Content\sampleAd.xnb
 Content\menufont.xnb
 Content\gamefont.xnb
 Content\smallerGameFont.xnb

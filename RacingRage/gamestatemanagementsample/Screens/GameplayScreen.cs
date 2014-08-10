@@ -61,6 +61,7 @@ namespace GameStateManagementSample
         Texture2D enemyCar;
         Texture2D sideUI;
         Texture2D fuelCan;
+        Texture2D trollFaceTex;
 
         // Sprites positions
         Vector2 roadOneVect = new Vector2(0, 0);
@@ -75,6 +76,8 @@ namespace GameStateManagementSample
                                                 new Vector2(138,0),
                                                 new Vector2(198,0),
                                                 new Vector2(254,0)};
+        Vector2 TrollFacePos = new Vector2(-100, -100);
+        
 
         Rectangle fuelRect = new Rectangle(0, 0, 0, 0);
         Rectangle playerRect = new Rectangle(0, 0, 0, 0);
@@ -178,6 +181,7 @@ namespace GameStateManagementSample
                 playerCar = content.Load<Texture2D>("playerCar");
                 playerCarDestroy = content.Load<Texture2D>("playerCarDestroy");
                 fuelCan = content.Load<Texture2D>("fuelCan");
+                trollFaceTex = content.Load<Texture2D>("Troll_Face");
 
                 // Get width and height of car
                 carWidth = playerCar.Width;
@@ -342,6 +346,8 @@ namespace GameStateManagementSample
 
                 if (ScreenManager.playerReady == true)
                 {
+
+                    TrollFacePos = new Vector2(-100, -100);
                     #region Accelerometer
                     if (ScreenManager.enableAccelerometer == true && ScreenManager.enableAnimation == false)
                     {
@@ -789,6 +795,7 @@ namespace GameStateManagementSample
             carSpawner();
             enemyPositionCounter = -800;
             endingAnimationDeccelaration = 20;
+            
         }
 
         //Used on every new round
@@ -805,6 +812,7 @@ namespace GameStateManagementSample
             {
                 carCrashInstance.Play();
             }
+            TrollFacePos = new Vector2(10, 10);
             playerCar = playerCarDestroy;
             
             Thread.Sleep(timePause);
@@ -926,7 +934,7 @@ namespace GameStateManagementSample
             {
                 spriteBatch.Draw(enemyCar, enemyCarsVect[i], Color.White);
             }
-
+            spriteBatch.Draw(trollFaceTex, TrollFacePos,null, Color.White,0.0f,new Vector2(0,0),0.1f,SpriteEffects.None,0.0f);
             spriteBatch.Draw(fuelCan, fuelRect, Color.White * fuelTransparency);
 
             spriteBatch.Draw(sideUI, new Vector2(390, 0), Color.White);

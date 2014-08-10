@@ -1,0 +1,32 @@
+﻿<xapCache source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Racing Rage.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="8/8/2014 2:54:08 PM">
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\tileThumbnail.png" archivePath="tileThumbnail.png" lastWriteTime="4/8/2014 8:28:58 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\GameThumbnail.png" archivePath="GameThumbnail.png" lastWriteTime="4/8/2014 8:28:58 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="8/8/2014 2:54:06 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="4/8/2014 8:28:58 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Racing Rage.dll" archivePath="Racing Rage.dll" lastWriteTime="8/8/2014 2:54:06 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\AdDuplex.Xna.dll" archivePath="AdDuplex.Xna.dll" lastWriteTime="5/9/2011 1:49:10 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagement\bin\Windows Phone\Release\GameStateManagement.dll" archivePath="GameStateManagement.dll" lastWriteTime="8/8/2014 2:54:02 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\SOMAWP7.dll" archivePath="SOMAWP7.dll" lastWriteTime="5/8/2014 8:06:21 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\background.xnb" archivePath="Content\background.xnb" lastWriteTime="8/8/2014 2:54:02 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\blank.xnb" archivePath="Content\blank.xnb" lastWriteTime="8/8/2014 2:54:02 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\gradient.xnb" archivePath="Content\gradient.xnb" lastWriteTime="8/8/2014 2:54:02 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\road.xnb" archivePath="Content\road.xnb" lastWriteTime="8/8/2014 2:54:02 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\roadEnd.xnb" archivePath="Content\roadEnd.xnb" lastWriteTime="8/8/2014 2:54:02 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\ui.xnb" archivePath="Content\ui.xnb" lastWriteTime="8/8/2014 2:54:02 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\playerCar.xnb" archivePath="Content\playerCar.xnb" lastWriteTime="8/8/2014 2:54:02 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\enemyCar.xnb" archivePath="Content\enemyCar.xnb" lastWriteTime="8/8/2014 2:54:02 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\fuelCan.xnb" archivePath="Content\fuelCan.xnb" lastWriteTime="8/8/2014 2:54:02 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\SPLOGO.xnb" archivePath="Content\SPLOGO.xnb" lastWriteTime="8/8/2014 2:54:02 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\Title_Background_Pattern.xnb" archivePath="Content\Title_Background_Pattern.xnb" lastWriteTime="8/8/2014 2:54:02 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\transparent.xnb" archivePath="Content\transparent.xnb" lastWriteTime="8/8/2014 2:54:02 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\sampleAd.xnb" archivePath="Content\sampleAd.xnb" lastWriteTime="8/8/2014 2:54:02 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\menufont.xnb" archivePath="Content\menufont.xnb" lastWriteTime="8/8/2014 2:54:02 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\gamefont.xnb" archivePath="Content\gamefont.xnb" lastWriteTime="8/8/2014 2:54:02 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\smallerGameFont.xnb" archivePath="Content\smallerGameFont.xnb" lastWriteTime="8/8/2014 2:54:02 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\engineLoop.xnb" archivePath="Content\engineLoop.xnb" lastWriteTime="8/8/2014 2:54:02 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\Car Crash.xnb" archivePath="Content\Car Crash.xnb" lastWriteTime="8/8/2014 2:54:02 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\WinMusic.xnb" archivePath="Content\WinMusic.xnb" lastWriteTime="8/8/2014 2:54:02 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\Pickup-Sound.xnb" archivePath="Content\Pickup-Sound.xnb" lastWriteTime="8/8/2014 2:54:02 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\Cheesy Track.xnb" archivePath="Content\Cheesy Track.xnb" lastWriteTime="8/8/2014 2:54:06 PM" />
+  <file source="C:\Users\user\Desktop\Copies\RacingRage\GameStateManagementSample\bin\Windows Phone\Release\Content\Cheesy Track.wma" archivePath="Content\Cheesy Track.wma" lastWriteTime="8/8/2014 2:54:06 PM" />
+</xapCache>

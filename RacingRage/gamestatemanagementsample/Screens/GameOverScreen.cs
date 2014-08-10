@@ -38,7 +38,7 @@ namespace GameStateManagementSample
         void retryButton_Tapped(object sender, EventArgs e)
         {
             ScreenManager.engineSoundBool = true;
-            LoadingScreen.Load(ScreenManager, true, PlayerIndex.One, new GameplayScreen());
+            //LoadingScreen.Load(ScreenManager, true, PlayerIndex.One, new GameplayScreen());
             ExitScreen();
         }
 

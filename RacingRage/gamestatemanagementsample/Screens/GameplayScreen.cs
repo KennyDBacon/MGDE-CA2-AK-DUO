@@ -55,7 +55,9 @@ namespace GameStateManagementSample
         // Sprites
         Texture2D road;
         Texture2D roadEnd;
+        Texture2D playerCarNotDestroy;
         Texture2D playerCar;
+        Texture2D playerCarDestroy;
         Texture2D enemyCar;
         Texture2D sideUI;
         Texture2D fuelCan;
@@ -63,7 +65,7 @@ namespace GameStateManagementSample
         // Sprites positions
         Vector2 roadOneVect = new Vector2(0, 0);
         Vector2 roadTwoVect = new Vector2(0, -800);
-        Vector2 roadEndVect = new Vector2(0, -8000);
+        Vector2 roadEndVect = new Vector2(0, -80000);
 
         Vector2 UICarVect = new Vector2(416, 570);
 
@@ -172,9 +174,10 @@ namespace GameStateManagementSample
                 roadEnd = content.Load<Texture2D>("roadEnd");
                 sideUI = content.Load<Texture2D>("ui");
                 enemyCar = content.Load<Texture2D>("enemyCar");
+                playerCarNotDestroy = content.Load<Texture2D>("playerCar");
                 playerCar = content.Load<Texture2D>("playerCar");
+                playerCarDestroy = content.Load<Texture2D>("playerCarDestroy");
                 fuelCan = content.Load<Texture2D>("fuelCan");
-                //
 
                 // Get width and height of car
                 carWidth = playerCar.Width;
@@ -183,7 +186,7 @@ namespace GameStateManagementSample
 
                 fuelRect = new Rectangle(0, 0, fuelCan.Width, fuelCan.Height);
 
-                playerRect = new Rectangle(Convert.ToInt32(playerPosition.X + 4), Convert.ToInt32(playerPosition.Y + 4), carWidth - 8, carHeight - 8);
+                
                 
                 for (int i = 0; i < enemyCarsVect.Length; i++)
                 {
@@ -424,7 +427,7 @@ namespace GameStateManagementSample
                         }
                     }
                     #endregion
-
+                    playerCar = playerCarNotDestroy;
                     timer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
 
                     if (timer <= 0)
@@ -742,8 +745,10 @@ namespace GameStateManagementSample
         // Detect collion of player car with enemy cars
         private void hitTest(int index)
         {
+
             if (playerRect.Intersects(enemyRect[index]))
             {
+                playerCar = playerCarDestroy;
                 vibration.Start(TimeSpan.FromMilliseconds(500));
                 resetGame(3000);
             }
@@ -761,10 +766,13 @@ namespace GameStateManagementSample
         {
             ScreenManager.playerReady = false;
             playerPosition = new Vector2(200, 400);
-            UICarVect.Y = 570;
+            Point position = new Point(200, 400);
+            playerRect = new Rectangle(Convert.ToInt32(playerPosition.X + 4), Convert.ToInt32(playerPosition.Y + 4), carWidth - 8, carHeight - 8);
+            playerRect.Location = position;
+            //UICarVect.Y = 570;
             roadOneVect.Y = 0;
             roadTwoVect.Y = -800;
-            roadEndVect.Y = -8000;
+            //roadEndVect.Y = -80000;
 
             if (fuelExist == true)
             {
@@ -797,14 +805,17 @@ namespace GameStateManagementSample
             {
                 carCrashInstance.Play();
             }
+            playerCar = playerCarDestroy;
+            
             Thread.Sleep(timePause);
-
+            
             fuelCounter -= 20;
 
             if (fuelCounter < 0)
             {
                 fuelCounter = 0;
                 ScreenManager.AddScreen(new GameOverScreen(), PlayerIndex.One);
+                
             }
         }
         
@@ -922,6 +933,7 @@ namespace GameStateManagementSample
             spriteBatch.DrawString(smallerGameFont, fuel, new Vector2(475 - smallerGameFont.MeasureString(fuel).X, 680), Color.Black);
 
             spriteBatch.Draw(playerCar, playerPosition, Color.White);
+
             spriteBatch.Draw(playerCar, UICarVect, Color.White);
 
             //spriteBatch.Draw(playerCar, new Vector2(playerPosition.X + 4, playerPosition.Y + 4), playerRect, Color.White);

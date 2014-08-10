@@ -29,6 +29,7 @@ namespace GameStateManagementSample
         Texture2D splogo;
         Texture2D background_pattern;
         Texture2D transBack;
+        Texture2D TeamLogo;
 
         InputAction backToMenu;
 
@@ -62,6 +63,8 @@ namespace GameStateManagementSample
                 background_pattern = content.Load<Texture2D>("background");
                 splogo = content.Load<Texture2D>("SPLOGO");
                 transBack = content.Load<Texture2D>("transparent");
+                TeamLogo = content.Load<Texture2D>("AK-DUO LOGO");
+                
                 
                 creditpos = ScreenDimensions.Y / 2 - gameFont.MeasureString(creditsTitle).X / 2;
                 TouchPanel.EnabledGestures =
@@ -137,10 +140,12 @@ namespace GameStateManagementSample
                 new Vector2(0, 0),
                 Color.White);
 
-            ScreenManager.SpriteBatch.Draw(transBack, new Rectangle(50, Convert.ToInt32(creditpos), splogo.Width, 800), Color.White);
-            ScreenManager.SpriteBatch.DrawString(ScreenManager.Font, credits, new Vector2(70, creditpos), Color.White);
-            ScreenManager.SpriteBatch.Draw(splogo, new Vector2(50, ScreenDimensions.X - 100), Color.White);
+            
 
+            ScreenManager.SpriteBatch.Draw(transBack, new Rectangle(80, Convert.ToInt32(creditpos), splogo.Width, 800), Color.White);
+            ScreenManager.SpriteBatch.DrawString(ScreenManager.Font, credits, new Vector2(100, creditpos), Color.White);
+            ScreenManager.SpriteBatch.Draw(splogo, new Vector2(80, ScreenDimensions.X - 100), Color.White);
+            ScreenManager.SpriteBatch.Draw(TeamLogo, new Vector2(ScreenDimensions.X/2-20-(TeamLogo.Width/2)*0.15f, creditpos - 50),null, Color.White,0.0f,new Vector2(TeamLogo.Width/2,TeamLogo.Height/2),0.15f,SpriteEffects.None,0);
             ScreenManager.SpriteBatch.End();
 
         }

@@ -67,22 +67,19 @@ namespace GameStateManagementSample
         Vector2 roadOneVect = new Vector2(0, 0);
         Vector2 roadTwoVect = new Vector2(0, -800);
         Vector2 roadEndVect = new Vector2(0, -80000);
-
         Vector2 UICarVect = new Vector2(416, 570);
-
         Vector2 fuelVect = new Vector2(0, 0);
-
+        Vector2 TrollFacePos = new Vector2(-100, -100);
         Vector2[] enemyCarsVect = new Vector2[]{new Vector2(80,0),
                                                 new Vector2(138,0),
                                                 new Vector2(198,0),
                                                 new Vector2(254,0)};
-        Vector2 TrollFacePos = new Vector2(-100, -100);
         
-
         Rectangle fuelRect = new Rectangle(0, 0, 0, 0);
         Rectangle playerRect = new Rectangle(0, 0, 0, 0);
         Rectangle[] enemyRect = new Rectangle[4];
 
+        //Sound Effects
         SoundEffect engineLoop;
         SoundEffectInstance EngineInstance;
         SoundEffect carCrash;
@@ -165,6 +162,7 @@ namespace GameStateManagementSample
 
                 spriteBatch = new SpriteBatch(ScreenManager.GraphicsDevice);
 
+                //Ad Texture
                 textureSomaAd = content.Load<Texture2D>("sampleAd");
 
                 // Load fonts
@@ -191,7 +189,7 @@ namespace GameStateManagementSample
                 fuelRect = new Rectangle(0, 0, fuelCan.Width, fuelCan.Height);
 
                 
-                
+                //Initializing all the enemyCar Rectangles
                 for (int i = 0; i < enemyCarsVect.Length; i++)
                 {
                     enemyRect[i] = new Rectangle(Convert.ToInt32(enemyCarsVect[i].X + 4), 0, carWidth - 8, carHeight - 8);

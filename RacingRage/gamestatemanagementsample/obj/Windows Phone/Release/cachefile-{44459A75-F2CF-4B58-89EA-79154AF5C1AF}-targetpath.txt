@@ -11,6 +11,7 @@ Content\SPLOGO.xnb
 Content\Title_Background_Pattern.xnb
 Content\transparent.xnb
 Content\sampleAd.xnb
+Content\playerCarDestroy.xnb
 Content\menufont.xnb
 Content\gamefont.xnb
 Content\smallerGameFont.xnb
@@ -20,3 +21,4 @@ Content\WinMusic.xnb
 Content\Pickup-Sound.xnb
 Content\Cheesy Track.xnb
 Content\Cheesy Track.wma
+Content\Troll_Face.xnb

@@ -934,7 +934,7 @@ namespace GameStateManagementSample
             {
                 spriteBatch.Draw(enemyCar, enemyCarsVect[i], Color.White);
             }
-            spriteBatch.Draw(trollFaceTex, TrollFacePos,null, Color.White,0.0f,new Vector2(0,0),0.1f,SpriteEffects.None,0.0f);
+            
             spriteBatch.Draw(fuelCan, fuelRect, Color.White * fuelTransparency);
 
             spriteBatch.Draw(sideUI, new Vector2(390, 0), Color.White);
@@ -959,6 +959,7 @@ namespace GameStateManagementSample
             if (ScreenManager.enableAd == true)
             {
                 spriteBatch.Begin();
+                spriteBatch.Draw(trollFaceTex, TrollFacePos, null, Color.White, 0.0f, new Vector2(0, 0), 0.1f, SpriteEffects.None, 0.0f);
                 spriteBatch.Draw(textureSomaAd, new Rectangle(0, 720, 480, 80), Color.White);
                 spriteBatch.End();
             }
